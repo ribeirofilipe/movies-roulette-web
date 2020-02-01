@@ -67,6 +67,7 @@ export default function PopularMovies() {
           </Card>
         ))}
       </Cards>
+
     </Container>
   );
 }
