@@ -15,7 +15,8 @@ export const Container = styled.div`
     font-weight: bold;
     margin-bottom: 30px;
     transition: 0.4s;
-
+ 
+ 
     :hover {
       color: #7159c1;
     }
