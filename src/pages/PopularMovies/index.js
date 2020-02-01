@@ -13,9 +13,9 @@ export default function PopularMovies() {
     async function loadPopularMovies() {
       const pageNumber = page > 0 ? page : 1;
 
-      const response = await api.post(`/movies/popular`, { page: pageNumber }, {
+      const response = await api.post('/movies/popular', { page: pageNumber }, {
         headers: {
-          Authorization: token
+          Authorization: token,
         }
       });
 
@@ -25,14 +25,14 @@ export default function PopularMovies() {
     };
 
     loadPopularMovies();
-  }, [])
+  }, [page])
 
   async function handleChangePage(page) {
     if (page === 0) return;
 
     const response = await api.post(`/movies/popular`, { page }, {
       headers: {
-        Authorization: token
+        Authorization: token,
       },
     });
 
@@ -42,7 +42,7 @@ export default function PopularMovies() {
 
     return;
   };
- 
+
 
   return (
     <Container>
@@ -61,8 +61,8 @@ export default function PopularMovies() {
           <Card>
             <p>{movie.title}</p>
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-              alt="" 
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt=""
               />
           </Card>
         ))}

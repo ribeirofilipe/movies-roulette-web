@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
-import token from '../../config/token';
 
 import { Container, Label, InputMovie, Card } from './styles';
 
@@ -11,7 +10,7 @@ export default function Movie() {
   async function loadMovie(id) {
       const response = await api.get(`/movie/${id}`, {
         headers: {
-          Authorization: token
+          Authorization: process.env.TOKEN,
         }
       });
 
